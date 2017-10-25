@@ -1,0 +1,16 @@
+<% content_for :sitemap do %>
+  <a href="<%= admin_files_path %>"><%= t("admin.menu.files")%></a> <i class="fa fa-angle-right"></i> <span class="current"><%= t("admin.check_file")%></span>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @file.user.username %>
+</p>
+<p>
+    <%= image_tag(@file.image.url) %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_file_path(@file) %> |
+<%= link_to 'Back', admin_files_path %>
