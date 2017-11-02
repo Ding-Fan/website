@@ -44,6 +44,4 @@ class UsersController < ApplicationController
     end
     super(*(args << options))
   end
-
-
 end

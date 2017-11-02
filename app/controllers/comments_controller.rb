@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       @comment.type = 1
       @comment.status = 1
       current_user.points -= 1
-      @success = @comment.user.save && @comment.save
+      set_flash_message(:error, 'Your points are not enough')
     end
   end
 

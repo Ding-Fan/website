@@ -1,4 +1,3 @@
-
 class TopicsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy,
                                             :favorite, :unfavorite, :follow, :unfollow,

@@ -106,7 +106,7 @@ end
 
 group :development, :test do
   gem 'listen'
-  gem 'rubocop', '0.47.1', require: false
+  gem 'rubocop', require: false
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
