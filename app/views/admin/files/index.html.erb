@@ -1,0 +1,25 @@
+<% content_for :sitemap do %>
+  <span class="current"><%= t('admin.menu.files') %></span>
+<% end %>
+
+<table class="table table-bordered table-striped table-condensed">
+  <tr>
+    <td>#</td>
+    <td>预览</td>
+    <td>上传者</td>
+    <td></td>
+  </tr>
+
+<% @files.each do |file| %>
+  <tr>
+    <td><%= file.id %></td>
+    <td><%= link_to image_tag(file.image.url(:md), style: "width: 150px"), file.image.url, target: "_blank" if !file[:image].blank? %></td>
+    <td><%= file.user.username if !file.user.blank? %></td>
+    <td><%= link_to '', admin_file_path(file), 'data-confirm' => 'Are you sure?', method: :delete, class: "fa fa-trash" %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @files %>
+<br />
+
+<%= link_to 'New file', new_admin_file_path %>
